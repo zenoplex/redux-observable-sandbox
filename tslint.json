@@ -1,0 +1,16 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint-config-airbnb"],
+  "rules": {
+    "no-var-keyword": true,
+    "typedef": [true, "call-signature"],
+    "readonly-keyword": true,
+    "readonly-array": true,
+    "no-let": true,
+    "no-this": true,
+    "no-class": true,
+    "no-mixed-interface": true,
+    "no-expression-statement": true
+  },
+  "rulesDirectory": ["./node_modules/tslint-immutable/rules"]
+}

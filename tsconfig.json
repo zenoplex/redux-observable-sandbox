@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "sourceRoot": "src",
+    "outDir": "dist",
+    "removeComments": true,
+    "strict": true,
+    "declaration": false,
+    "noEmitOnError": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "test",
+    "node_modules"
+  ]
+}
