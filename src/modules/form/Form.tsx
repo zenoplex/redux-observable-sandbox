@@ -6,14 +6,14 @@ interface Props extends ReduxForm.ReduxFormProps<any> {
     firstName: ReduxForm.FieldProp<string>,
     lastName: ReduxForm.FieldProp<string>,
   },
-  onClick: () => void, 
+  onSubmit: () => void, 
 }
 
 export const Form: React.SFC<Props> 
-= ({ fields, onClick }) =>
-    <form>
+= ({ fields, onSubmit }) =>
+    <form onSubmit={onSubmit}>
       <input type="text" {...fields.firstName} />
       <input type="text" {...fields.lastName} />
-      <button type="button" onClick={onClick}>submit</button>
+      <button type="submit">submit</button>
     </form>;
   
