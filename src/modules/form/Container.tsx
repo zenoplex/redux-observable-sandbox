@@ -2,7 +2,7 @@ import { compose, withHandlers } from 'recompose';
 import { connect, Dispatch } from 'react-redux';
 import * as ReduxForm from 'redux-form';
 import { Form } from './Form';
-import { submit } from './actions';
+import { submit, FormData, SubmitAction } from './actions';
 import { ReduxAction } from '../../store';
 
 export const Container = compose(
@@ -15,6 +15,11 @@ export const Container = compose(
   }),
   connect(),
   withHandlers({
-    onClick: ({ dispatch }) => (e: Event) => dispatch(submit()),
+    onSubmit: ({ dispatch, handleSubmit }) => (e: Event) => {
+      const fn: (_: FormData) => Dispatch<SubmitAction>
+      = (data) => dispatch(submit(data));
+
+      return handleSubmit(fn)(e);
+    },
   }),
 )(Form);
