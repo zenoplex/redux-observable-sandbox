@@ -10,10 +10,12 @@ interface Props extends ReduxForm.ReduxFormProps<any> {
 }
 
 export const Form: React.SFC<Props> 
-= ({ fields, onSubmit }) =>
+= ({ fields, onSubmit, submitting }) =>
     <form onSubmit={onSubmit}>
-      <input type="text" {...fields.firstName} />
-      <input type="text" {...fields.lastName} />
-      <button type="submit">submit</button>
+      <fieldset disabled={submitting}>
+        <input type="text" {...fields.firstName} />
+        <input type="text" {...fields.lastName} />
+        <button type="submit">submit</button>
+      </fieldset>
     </form>;
   
